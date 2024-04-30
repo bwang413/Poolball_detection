@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pool ball</title>
+</head>
+<body>
+<div style="display: flex;flex-direction: column; align-items: center; gap: 20px;">
+    <h1 style="margin-bottom: 0;"> Pool ball live detection </h1>
+    <div style="display: flex; gap: 20px">
+        <div>
+            <label for="rtsp">RTSP URL:</label>
+            <input id="rtsp" style="width: 200px; height: 25px; box-sizing: border-box" value="rtsp://192.168.0.61/live/av0"
+            />
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="socurl">Socket Server:</label>
+            <input id="socurl" style="width: 200px; height: 25px; box-sizing: border-box" value="http://127.0.0.1:8089"
+            />
+        </div>
+        <button id="connect">Connect</button>
+    </div>
+    <img id="pool" width="1080" height="680" src="">
+</div>
+</body>
+<script>
+    document.getElementById("pool").style.display = "none";
+    document.getElementById("connect").addEventListener("click", () => {
+        const url = document.getElementById("rtsp").value;
+        const socurl = document.getElementById("socurl").value;
+
+        document.getElementById("pool").style.display = "block";
+        document.getElementById("pool").src = `/webcam?url=${encodeURIComponent(url)}&socurl=${encodeURIComponent(socurl)}`;
+    });
+</script>
+</html>

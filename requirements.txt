@@ -1,0 +1,8 @@
+Django==5.0.4
+numpy==1.25.2
+opencv_python==4.8.0.76
+opencv_python_headless==4.9.0.80
+python-socketio==5.11.2
+socketIO_client_nexus==0.7.6
+socketIO_client_nexus==0.7.6
+ultralytics==8.2.3
